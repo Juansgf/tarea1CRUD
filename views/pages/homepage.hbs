@@ -1,0 +1,17 @@
+<h1>Lista de productos: </h1>
+{{#each products}}
+<p>{{id}} - {{ name}}</p>
+<form action='/products/{{id}}'>
+    <input type="submit" value="Detalle"> 
+</form>
+<form action="/products/{{id }}/edit">
+    <input type="submit" value="Editar"> 
+</form>
+<form method="POST" action='/products/{{ id }}?_method=DELETE'>
+                <input type="submit" value="Delete">
+</form>
+{{/each}}
+
+<br><br><br>
+<button onclick="window.location.href='/agregar'">Agrega Producto</button>
+
